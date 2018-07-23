@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>first</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			var ar=new Array();
+			//var ar1[];
+           $(".b1").click(function(){
+           	var x=$(".v1").val();
+             $(".i1").append(x+"<br>");
+             ar.push(x);
+           });
+           $(".b2").click(function(){
+           	var x1=$(".v2").val();
+           	$(".i2").append(x1+"<br>");
+              for(var i=0;i<ar.length;i++)
+             {
+             	var sum=parseInt(x1)+parseInt(ar[i]);
+             	if(parseInt(sum)>=100)
+             	$(".ans").append(x1+"+"+ar[i]+"="+sum+"<br>");	
+             }
+           });
+		});
+	</script>
+</head>
+<body>
+Input 1:<input type="text" class="v1" name="a">
+<input type="button" name="s" class="b1" value="submit">
+<p class="i1"></p>
+Input 2:<input type="text" class="v2" name="b">
+<input type="button" name="s1" class="b2" value="submit">
+<p class="i2"></p>
+<br>
+<br><br>
+<h1 class="ans"></h1>
+</body>
+</html>

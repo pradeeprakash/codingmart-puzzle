@@ -1,0 +1,52 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<input type="button" style="background-color:#000000;height:100px;width:100px;position:absolute;" id="one">
+<input type="button" style="background-color:#FF0000;height:100px;width:100px;position:absolute;left:100px" id="two">
+<br><br><br><br>
+
+<input type="button" style="background-color:#800000;height:100px;width:100px;position:absolute;" id="three" >
+<input type="button" style="background-color:#FFFF00;height:100px;width:100px;position:absolute;left:100px" id="four">
+<br><br><br><br>
+
+<input type="button" style="background-color:#808000;height:100px;width:100px;position:absolute;" id="five">
+<input type="button" style="background-color:#00FF00;height:100px;width:100px;position:absolute;left:100px" id="six">
+<br><br><br><br>
+
+<input type="button" style="background-color:#008000;height:100px;width:100px;position:absolute;" id="seven" >
+<input type="button" style="background-color:#00FFFF;height:100px;width:100px;position:absolute;left:100px" id="eight">
+<br><br><br><br>
+
+
+<script type="text/javascript">
+	var count=0;
+var arr=[];
+$(document).ready(function(){
+    $("input").click(function(){
+        var b=$(this).css("background-color");
+        $(this).css("background-color", "white");
+        var a=$(this).attr('id')
+      
+        arr.push({id1:a,colour:b}); 
+        count++;
+        if(count>4)
+        { 
+          var temp1=arr[0].colour;
+          var temp2="#"+arr[0].id1;
+          console.log(temp1);
+          $(temp2).css("background-color", temp1);
+          arr.shift(); 
+        }
+
+    });
+});
+</script>
+
+</body>
+
+</html>
